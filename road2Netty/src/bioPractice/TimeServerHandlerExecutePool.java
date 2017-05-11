@@ -17,8 +17,8 @@ public class TimeServerHandlerExecutePool {
 	public TimeServerHandlerExecutePool(int maxPoolSize, int queueSize){
 		System.out.println("The number of processor: " + Runtime.getRuntime().availableProcessors());
 
-		// Runtime.getRuntime().availableProcessors() * 5: the min threads in pool
-		executor = new ThreadPoolExecutor(Runtime.getRuntime().availableProcessors() * 5,
+		// Runtime.getRuntime().availableProcessors(): the min threads in pool, the number of my compute processor is 2 
+		executor = new ThreadPoolExecutor(Runtime.getRuntime().availableProcessors(),
 				maxPoolSize,120L,TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(queueSize));
 	}
 	

@@ -23,6 +23,7 @@ public class TimeServerHandler implements Runnable{
 		
 		try {
 			
+			// 假设服务器处理单个请求需要等待的时间(BIO等待的时间)为500ms
 			Thread.sleep(500);
 			
 			in = new BufferedReader(new InputStreamReader(
